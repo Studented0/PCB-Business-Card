@@ -1,3 +1,4 @@
+[PCB Business Card-bom.csv](https://github.com/user-attachments/files/27329266/PCB.Business.Card-bom.csv)
 # PCB-Business-Card
  
 A PCB business card that shows your Discord Spotify activity in real time. Album art, song title, artist, and a live progress bar on a 2.0" IPS display. Tap the card with any phone to open the exact song you're listening to in Spotify. When nothing is playing, the NFC rewrites itself to GitHub. QR code on the board links there too (for now).
@@ -80,7 +81,10 @@ SMD parts assembled by JLCPCB. ESP32 and display sourced separately.
 | NT3H2111W0FHKH XQFN-8 | 1 | C710403 | Extended — NFC |
 | TYPE-C 16PIN 2MD | 1 | C2765186 | Extended — USB-C |
 | Tactile switch SMD | 2 | — | Extended |
- 
+ Name,Purpose,Quantity,Total Cost (USD),Link,Distributor
+"Display","Displaying",1,14.00,"https://www.amazon.com/gp/product/B0GL1SWYP4/ref=ox_sc_act_title_1?smid=A2Z10KY0342329&psc=1","Amazon"
+"ESP32-S3-WROOM-1-N4","microcontroller",1,5.21,"https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639","DIGIKEY"
+"JLCPCB","PCB",1,25.59,"","JLCPCB"
 | Component | Qty | Source |
 |-----------|-----|--------|
 | ESP32-S3-WROOM-1-N4 | 1 | DigiKey 1965-ESP32-S3-WROOM-1-N4CT-ND |
