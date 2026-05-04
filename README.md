@@ -6,7 +6,9 @@ Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (
  
 ## Screenshots
 [lanyardpcbcard.pdf](https://github.com/user-attachments/files/27328969/lanyardpcbcard.pdf)
-<img width="1724" height="978" alt="lanyardpcbcard" src="https://github.com/user-attachments/assets/e74c7391-5224-4d8d-99e6-b06289b47a4d" />
+
+<img width="1724" height="978" alt="lanyardpcbcard" src="https://github.com/user-attachments/assets/72dcc8d4-80f3-416c-8f40-d92322912cd9" />
+
 
 
 
@@ -113,4 +115,4 @@ PCB-Business-Card/
  
 ## License
  
-MIT(LISENCE)
+[MIT](LICENSE)
