@@ -5,7 +5,7 @@ A PCB business card that shows your Discord Spotify activity in real time. Album
 Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (or any wifi) for the Lanyard WebSocket. A little bigger than a credit card, with a lanyard notch.
  
 ## Screenshots
-[lanyardpcbcard.pdf](https://github.com/user-attachments/files/27328969/lanyardpcbcard.pdf)
+<img width="1084" height="756" alt="image" src="https://github.com/user-attachments/assets/a8d840ab-513b-43b4-9d26-ffe24e27af58" />
 
 <img width="1724" height="978" alt="lanyardpcbcard" src="https://github.com/user-attachments/assets/72dcc8d4-80f3-416c-8f40-d92322912cd9" />
 
