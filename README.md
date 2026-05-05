@@ -1,9 +1,9 @@
 [PCB Business Card-bom.csv](https://github.com/user-attachments/files/27329266/PCB.Business.Card-bom.csv)
 # PCB-Business-Card
  
-A PCB business card that shows your Discord Spotify activity in real time. Album art, song title, artist, and a live progress bar on a 2.0" IPS display. Tap the card with any phone to open the exact song you're listening to in Spotify. When nothing is playing, the NFC rewrites itself to GitHub. QR code on the board links there too (for now).
+A PCB Business card that shows your Spotify activity using lanyard in real time. Tap the card with a phone to show what song is playing on Spotify.
  
-Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (or any wifi) for the Lanyard WebSocket. A little bigger than a credit card, with a lanyard notch.
+Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (or any wifi) for the Lanyard WebSocket. 
  
 ## Screenshots
 <img width="1084" height="756" alt="image" src="https://github.com/user-attachments/assets/a8d840ab-513b-43b4-9d26-ffe24e27af58" />
@@ -15,31 +15,10 @@ Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (
 
 ## Why I built this
  
-I wanted a business card that has a cool twist. Plain cards feel like a waste of time to show. This one shows what I'm listening to, lets someone tap it to hear the same song, and has my GitHub a QR scan away. Business cards are supposed to grab peoples attention and I would say this one is different than the rest.
+I wanted a business card that has a cool twist. Plain cards feel boring to show and they are all the same. This one shows what I'm listening to, lets someone tap it to hear the same song, and has my GitHub a QR scan away. Business cards are supposed to grab people's attention, and I would say this one is different than other business cards.
  
 ## Hardware
- 
-Two-layer board, 100×75mm, designed in KiCad 9. SMD components assembled by JLCPCB. ESP32-S3-MINI-1 soldered by hand after the board arrives since it requires standard assembly and economic was MUCH cheaper without it. Display plugs into a through-hole header and gets soldered against the board.
- 
-The ESP32-S3 connects to Lanyard's WebSocket API over WiFi and parses the Spotify presence data. Album art is fetched over HTTPS and decoded on-device with TJpg_Decoder, rendered directly to the ST7789V display over SPI. The NT3H2111 NFC chip sits in the bottom right corner with a two-turn rectangular antenna loop on the back copper layer. The ESP32 rewrites the NDEF record over I2C every time the track changes.
- 
-A QR code etched in copper on the front links to GitHub (subject to change). Concentric copper circles around the NFC area are exposed through a soldermask opening so they show as bare metal.
- 
-Power comes from USB-C through a pair of 5.1kΩ CC resistors and an AMS1117-3.3 LDO. The ESP32's native USB peripheral handles programming directly through the same connector. Two tactile switches on the bottom for boot and reset.
- 
-## How the NFC works
- 
-The NT3H2111 has both an RF interface and an I2C interface. The phone reads it over RF like any NFC tag. The ESP32 writes to it over I2C. Every time Lanyard fires a presence update, the ESP32 checks the Spotify object — if a track is playing it writes `open.spotify.com/track/{id}` as the NDEF URL. If nothing is playing it writes the GitHub URL. The Field Detect pin goes high when a phone is actively reading the tag.
- 
-## How the progress bar works
- 
-Lanyard's Spotify object includes `timestamps.start` and `timestamps.end` as Unix milliseconds. On boot the ESP32 syncs with NTP to get real Unix time. Progress is calculated locally every 100ms:
- 
-```
-progress_ms = (ntp_unix_ms_at_boot + millis()) - timestamps.start
-```
- 
-When Lanyard sends a new presence update the timestamps resync. No polling, no drift.
+ The ESP32 rewrites the NDEF URL every time a track changes over I2C, NT3H2111 (NFC Module) has I2C and RF interface simultaneously. When you are playing something NFC goes to spotify when nothing is playing goes to GitHub (for now). 100x75mm PCB. USB-C powers it with any power bank (im personally planning to use my phone). ESP32 is going to be hand soldered to save money but everything else is JLCPCB assembly 
  
 ## Wiring
  
@@ -61,13 +40,13 @@ When Lanyard sends a new presence update the timestamps resync. No polling, no d
  
 ## Firmware
  
-`firmware/main.ino` — WiFi connection, NTP sync, Lanyard WebSocket, Spotify presence parsing, album art fetch and decode, display rendering, progress bar, NFC NDEF writes over I2C, reconnection logic.
+`firmware/main.ino` 
  
-Libraries needed: TFT_eSPI, TJpg_Decoder, ArduinoWebsockets, ArduinoJson. Install through Arduino IDE library manager. Board: ESP32S3 Dev Module.
+Libraries needed: TFT_eSPI, TJpg_Decoder, ArduinoWebsockets, ArduinoJson. Board: ESP32S3 Dev Module.
  
 ## Bill of Materials
  
-SMD parts assembled by JLCPCB. ESP32 and display sourced separately.
+SMD parts assembled by JLCPCB. ESP32 and the display are sourced separately.
  
 | Component | Qty | LCSC | Note |
 |-----------|-----|------|------|
