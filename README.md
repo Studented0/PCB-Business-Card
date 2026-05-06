@@ -66,7 +66,7 @@ SMD parts assembled by JLCPCB. ESP32 and the display are sourced separately.
 "JLCPCB","PCB",1,25.59,"","JLCPCB"
 | Component | Qty | Source |
 |-----------|-----|--------|
-| ESP32-S3-WROOM-1-N4 | 1 | DigiKey 1965-ESP32-S3-WROOM-1-N4CT-ND |
+| ESP32-S3-WROOM-1-N8| 1 | Mouser Electronics |
 | 2.0" ST7789V IPS 240×320 | 1 | Amazon |
  
 ## Repository Structure
