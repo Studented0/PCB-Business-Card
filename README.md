@@ -8,7 +8,8 @@ Powered over USB-C from a phone or any power bank. Connects to a phone hotspot (
 ## Screenshots
 <img width="1084" height="756" alt="image" src="https://github.com/user-attachments/assets/a8d840ab-513b-43b4-9d26-ffe24e27af58" />
 
-<img width="1724" height="978" alt="lanyardpcbcard" src="https://github.com/user-attachments/assets/72dcc8d4-80f3-416c-8f40-d92322912cd9" />
+<img width="1724" height="978" alt="lanyardpcbcard" src="https://github.com/user-attachments/assets/0d647543-553a-4626-8b02-d03da231feaf" />
+
 
 
 
@@ -66,7 +67,7 @@ SMD parts assembled by JLCPCB. ESP32 and the display are sourced separately.
 "JLCPCB","PCB",1,25.59,"","JLCPCB"
 | Component | Qty | Source |
 |-----------|-----|--------|
-| ESP32-S3-WROOM-1-N4 | 1 | DigiKey 1965-ESP32-S3-WROOM-1-N4CT-ND |
+| ESP32-S3-WROOM-1-N8| 1 | Mouser Electronics |
 | 2.0" ST7789V IPS 240×320 | 1 | Amazon |
  
 ## Repository Structure
